@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+            font-size: 1rem;
+            width: 355px;
+        }
+
+        div {
+            margin-top: 3px;
+        }
+
+        input,
+        select {
+            padding: 5px 10px;
+        }
+
+        input {
+            width: 60px;
+        }
+
+        input#rent_club_nm {
+            width: 67%;
+        }
+
+        input[type=date] {
+            width: 140px;
+        }
+
+        label {
+            display: inline-block;
+            width: 24%;
+        }
+
+        button {
+            padding: 5px 10px;
+            width: 100%;
+            margin-top: 10px;
+            cursor: pointer;
+        }
+
+        span#day {
+            margin-left: 10px;
+            color: magenta;
+            font-weight: bold;
+        }
+
+        hr {
+            border-style: solid;
+            margin: 20px 0;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div>
+        <a data-url="https://www.seongnam.go.kr/member/login.do?menuIdx=1000437" href="#">
+            로그인 바로가기
+        </a>
+    </div>
+
+    <hr />
+
+    <div>
+        <div>
+            <label for="date">날짜</label>
+            <input type="date" name="date" id="date" />
+            <span id="day"></span>
+        </div>
+
+        <div>
+            <label for="time">시간</label>
+            <select name="time" id="time">
+                <option value="06">06:00</option>
+                <option value="08">08:00</option>
+                <option value="10">10:00</option>
+                <option value="12">12:00</option>
+                <option value="14">14:00</option>
+                <option value="16">16:00</option>
+                <option value="18">18:00</option>
+                <option value="20">20:00</option>
+            </select>
+        </div>
+
+        <button id="rent">
+            예약
+        </button>
+    </div>
+
+    <hr />
+
+    <div>
+        <div>
+            <label for="rent_club_nm">클럽명</label>
+            <input type="text" id="rent_club_nm" />
+        </div>
+        <div>
+            <label for="rent_mobile2">연락처</label>
+            <input type="number" value="010" readonly />
+            <input type="number" id="rent_mobile2" />
+            <input type="number" id="rent_mobile3" />
+        </div>
+        <div>
+            <label for="rent_amount">이용인원</label>
+            <input type="number" id="rent_amount" value="20" />
+        </div>
+        <div>
+            <label for="rent_ceo_nm">회장명</label>
+            <input type="text" id="rent_ceo_nm" />
+        </div>
+        <div>
+            <label for="rent_ceo_mobile2">회장연락처</label>
+            <input type="number" value="010" readonly />
+            <input type="number" id="rent_ceo_mobile2" />
+            <input type="number" id="rent_ceo_mobile3" />
+        </div>
+        <button id="insert">
+            입력
+        </button>
+    </div>
+
+    <script src="popup.js"></script>
+</body>
+
+</html>
