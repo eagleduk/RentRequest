@@ -1,4 +1,4 @@
-# Extension Install
+# 확장프로그램 사용 가이드
 
 ## 1. 다운로드
 
@@ -34,7 +34,7 @@
 
 ---
 
-## 2. Option Value Setting
+## 2. 옵션값 저장
 
 1. Extension 활성화
 
