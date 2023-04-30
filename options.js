@@ -12,8 +12,9 @@ const inputs = [
 (() => {
   inputs.forEach((id) => {
     chrome.storage.sync.get(id, (v) => {
-      console.log(v[id]);
-      document.getElementById(id).value = v[id];
+      // console.log(v[id]);
+      const value = v[id] ? v[id] : "";
+      document.getElementById(id).value = value;
     });
   });
 })();
@@ -21,8 +22,6 @@ const inputs = [
 document.querySelector("button#save").addEventListener("click", (e) => {
   inputs.forEach((id) => {
     const value = document.getElementById(id).value;
-    chrome.storage.sync.set({ [id]: value }, () => {
-      console.log(`${id} value = ${value}`);
-    });
+    chrome.storage.sync.set({ [id]: value });
   });
 });
