@@ -7,28 +7,28 @@
 
 ![Untitled](images/Untitled.png)
 
-1. 압축 해제
+3. 압축 해제
 
 ![Untitled](images/Untitled%201.png)
 
-1. Chrome 실행
-2. Chrome 맞춤설정 및 제어 → 도구 더보기 → 확장프로그램
+4. Chrome 실행
+5. Chrome 맞춤설정 및 제어 → 도구 더보기 → 확장프로그램
 
 ![Untitled](images/Untitled%202.png)
 
-1. 개발자 모드 on
+6. 개발자 모드 on
 
 ![Untitled](images/Untitled%203.png)
 
-1. 압축해제된 확장 프로그램 로드
+7. 압축해제된 확장 프로그램 로드
 
 ![Untitled](images/Untitled%204.png)
 
-1. 압축해제된 폴더 선택
+8. 압축해제된 폴더 선택
 
 ![Untitled](images/Untitled%205.png)
 
-1. 설치 확인
+9. 설치 확인
 
 ![Untitled](images/Untitled%206.png)
 
@@ -40,15 +40,15 @@
 
 ![Untitled](images/Untitled%207.png)
 
-1. Chrome 주소창 옆 활성화 확인
+2. Chrome 주소창 옆 활성화 확인
 
 ![Untitled](images/Untitled%208.png)
 
-1. 우 클릭후 옵션값 설정
+3. 우 클릭후 옵션값 설정
 
 ![Untitled](images/Untitled%209.png)
 
-1. 옵션값 입력
+4. 옵션값 입력
 
 ![Untitled](images/Untitled%2010.png)
 
@@ -59,7 +59,7 @@
 - 회장명 입력
 - 회장 연락처 입력 : 010 번호 이후 회장 연락처 입력
 
-1. 데이터 저장
+5. 데이터 저장
 
 ![Untitled](images/Untitled%2011.png)
 
@@ -71,38 +71,38 @@
 
 ![Untitled](images/Untitled%2012.png)
 
-1. 로그인 페이지 이동
+2. 로그인 페이지 이동
 
 ![Untitled](images/Untitled%2013.png)
 
-1. 성남시청 로그인 `(**회원 가입 필수**)`
+3. 성남시청 로그인 `(**회원 가입 필수**)`
 
 ![Untitled](images/Untitled%2014.png)
 
-1. 예약 날짜 및 시간 선택
+4. 예약 날짜 및 시간 선택
 
 ![Untitled](images/Untitled%2015.png)
 
 - 날짜는 기본 **`다음달 오늘`** 로 선택 **( 예약 가능 기간 7일 후 ~ 다음달 오늘 )**
 - 시간은 저장된 옵션값으로 선택
 
-1. 예약 신청 페이지 이동
+5. 예약 신청 페이지 이동
 
 ![Untitled](images/Untitled%2016.png)
 
-1. 옵션값 입력
+6. 옵션값 입력
 
 ![Untitled](images/Untitled%2017.png)
 
-1. 행사계획서 첨부 `( **첨부 파일은 추후 배포** )`
+7. 행사계획서 첨부 `( **첨부 파일은 추후 배포** )`
 
 ![Untitled](images/Untitled%2018.png)
 
-1. 참여자명단 첨부 `( **첨부 파일은 추후 배포** )`
+8. 참여자명단 첨부 `( **첨부 파일은 추후 배포** )`
 
 ![Untitled](images/Untitled%2019.png)
 
-1. 예약 저장
+9. 예약 저장
 
 ![Untitled](images/Untitled%2020.png)
 
