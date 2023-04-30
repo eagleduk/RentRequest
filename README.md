@@ -34,7 +34,7 @@
 
 ---
 
-## Option Value Setting
+## 2. Option Value Setting
 
 1. Extension 활성화
 
@@ -65,7 +65,7 @@
 
 ---
 
-## 운동장 예약
+## 3. 운동장 예약
 
 1. Extension 선택
 
@@ -112,6 +112,6 @@
 
 ---
 
-## 예약 확인
+## 4. 예약 확인
 
 ![Untitled](images/Untitled%2023.png)
