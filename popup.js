@@ -124,8 +124,7 @@ document.addEventListener("DOMContentLoaded", (e) => {
 
   inputs.forEach((id) => {
     chrome.storage.sync.get(id, (v) => {
-      console.log(v[id]);
-      document.getElementById(id).value = v[id];
+      if (v?.[id]) document.getElementById(id).value = v[id];
     });
   });
 });
