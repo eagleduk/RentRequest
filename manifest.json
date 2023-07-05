@@ -4,9 +4,9 @@
   "description": "성남시 공공시설 대관 온라인 예약신청",
   "version": "1.0.0",
   "action": {
-    "default_icon": "logo.jpg",
+    "default_icon": "logo.png",
     "default_popup": "popup.html",
-    "default_title": "TEST"
+    "default_title": "마루공원 예약 확장"
   },
   "background": {
     "service_worker": "background.js"
