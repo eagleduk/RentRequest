@@ -18,13 +18,11 @@ function format(y, m, d) {
 
 function changeDate(e) {
   const date = new Date(e.target.value);
-  console.log(date);
   document.querySelector("#day").textContent = getDay(date.getDay());
 }
 
 async function submitRent(date, time) {
   const form = document.createElement("form");
-  // form.style.display = "none";
   form.action = "https://www.seongnam.go.kr/rent/rentParkDataWrite.do";
   form.method = "POST";
 
@@ -129,13 +127,10 @@ document.addEventListener("DOMContentLoaded", (e) => {
   });
 });
 
-document.querySelector("button#rent").addEventListener("click", async (e) => {
+document.querySelector("button#rent").addEventListener("click", (e) => {
   // 현재 탭 검색
-  const tabs = await chrome.tabs.query({});
-
   chrome.tabs.query(
     {
-      // selected: true,
       active: true,
       url: ["https://www.seongnam.go.kr/*"],
     },
@@ -164,7 +159,6 @@ document.querySelector("button#insert").addEventListener("click", (e) => {
   ];
   chrome.tabs.query(
     {
-      // selected: true,
       active: true,
       url: ["https://www.seongnam.go.kr/rent/rentParkDataWrite.do"],
     },
