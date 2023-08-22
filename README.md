@@ -1,5 +1,5 @@
 # WEB 예약 가이드
-
+### IPhone X 기준 ###
 1. https://eagleduk.github.io/RentRequest/ 접속
 
 ![web1](images/web1.jpg)
@@ -34,5 +34,5 @@
 
 ## 동영상가이드
 
-https://github.com/eagleduk/RentRequest/assets/33012310/e77a8ef0-b79a-4de1-b6f3-ea23f42fe79b
+https://github.com/eagleduk/RentRequest/assets/33012310/954ec5f1-4248-486a-b921-5880590430ef
 
