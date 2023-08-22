@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <a href="https://www.seongnam.go.kr/member/login.do?menuIdx=1000437" target="_blank">
+        로그인
+    </a>
+
+    <form action="https://www.seongnam.go.kr/rent/rentParkDataWrite.do" method="POST">
+        <input type="hidden" name="menuIdx" value="1001981" />
+        <div>
+            <label for="rent_park_idx">공원</label>
+            <select name="rent_park_idx" id="rent_park_idx">
+                <option value="10">화랑공원</option> <!-- 06시 ~ 22시 -->
+                <option value="12" selected>마루공원</option>
+                <option value="13">황새울공원</option> <!-- 08시 ~ 18시 -->
+            </select>
+
+            <label for="faci">시설</label>
+            <select name="rent_faci_idx" id="faci">
+                <option value="6">풋살장</option> <!-- 화랑공원 -->
+                <option value="7" selected>다목적구장(축구장)</option> <!-- 마루공원 -->
+                <option value="8">풋살장A</option> <!-- 황새울공원 -->
+                <option value="9">풋살장B</option> <!-- 황새울공원 -->
+            </select>
+        </div>
+
+        <div>
+            <label for="rent_dt">날짜</label>
+            <input type="date" name="rent_dt" id="rent_dt" />
+            <span id="day"></span>
+        </div>
+
+        <div>
+            <label for="rent_time_gbn">시간</label>
+            <select name="rent_time_gbn" id="rent_time_gbn">
+                <option value="06">06:00</option>
+                <option value="08">08:00</option>
+                <option value="10">10:00</option>
+                <option value="12">12:00</option>
+                <option value="14">14:00</option>
+                <option value="16">16:00</option>
+                <option value="18">18:00</option>
+                <option value="20">20:00</option>
+            </select>
+        </div>
+        <div>
+            <button type="submit">
+                예약
+            </button>
+        </div>
+        <div>
+            <button>
+                8시 예약
+            </button>
+            <button>
+                10시 예약
+            </button>
+        </div>
+    </form>
+</body>
+
+</html>
