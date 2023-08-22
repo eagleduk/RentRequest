@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Rent Request</title>
 
     <style>
         h1 {
@@ -22,7 +22,6 @@
             resize: none;
             box-sizing: border-box;
             overflow: visible;
-            -webkit-appearance: button;
             cursor: pointer;
             border: 1px solid #d1d1d1;
             margin-bottom: 10px;
@@ -36,7 +35,6 @@
             border-radius: 5px;
             text-decoration: none;
             text-align: center;
-            vertical-align: middle;
             padding: 9px 30px;
             display: block;
             width: 100%;
@@ -193,7 +191,7 @@
                 10: ["06", "08", "10", "12", "14", "16", "18", "20", "22"],
                 12: ["06", "08", "10", "12", "14", "16", "18", "20", "22"],
                 13: ["08", "10", "12", "14", "16", "18"]
-            }
+            };
             const form = document.querySelector("form");
             const rent_park_idx = document.getElementById("rent_park_idx");
             const rent_faci_idx = document.getElementById("rent_faci_idx");
@@ -249,10 +247,10 @@
             );
             shortcut8.addEventListener("click", (e) => {
                 rent_time_gbn.value = "08"
-            })
+            });
             shortcut10.addEventListener("click", (e) => {
                 rent_time_gbn.value = "10"
-            })
+            });
 
             rent_dt.addEventListener("click", function (evt) {
                 if (this.getAttribute("type") === "date") {
