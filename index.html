@@ -7,12 +7,17 @@
     <title>Document</title>
 
     <style>
+        h1 {
+            text-align: center;
+
+        }
+
         a {
             -webkit-text-size-adjust: 100%;
             list-style: none;
             margin: 0;
             padding: 0;
-            font-family: inherit;
+            font-family: '맑은 고딕', 'Malgun Gothic', '나눔고딕', NanumGothic, Helvetica, sans-serif;
             line-height: inherit;
             resize: none;
             box-sizing: border-box;
@@ -27,7 +32,7 @@
             color: #fff;
             font-weight: 700;
             height: 40px;
-            font-size: 15px;
+            font-size: 17px;
             border-radius: 5px;
             text-decoration: none;
             text-align: center;
@@ -35,18 +40,25 @@
             padding: 9px 30px;
         }
 
+        label {
+            font-family: '맑은 고딕', 'Malgun Gothic', '나눔고딕', NanumGothic, Helvetica, sans-serif;
+            font-size: 17px;
+            margin: 3px;
+            display: block;
+            font-weight: bold;
+        }
+
         input,
         select {
             -webkit-text-size-adjust: 100%;
             margin: 0;
-            font-family: inherit;
-            height: 32px;
+            font-family: '맑은 고딕', 'Malgun Gothic', '나눔고딕', NanumGothic, Helvetica, sans-serif;
             border: 1px solid #e1e1e1;
             border-radius: 0;
             appearance: none;
             color: #333;
-            padding: 0 10px;
-            font-size: inherit;
+            padding: 3px 10px;
+            font-size: 17px;
             line-height: 30px;
             display: inline-block;
             vertical-align: middle;
@@ -56,7 +68,7 @@
         }
 
         select {
-            padding: 0 25px 0 10px;
+            padding: 3px 25px 3px 10px;
             background: #fff url(/images/arr_select.png) 100% 50% no-repeat;
         }
 
@@ -80,11 +92,29 @@
             padding: 9px 30px;
             font-size: 17px;
             font-weight: 600;
+            width: 100%;
+        }
+
+        .wrapper {
+            margin-top: 8px;
+        }
+
+        .customWrapper {
+            display: flex;
+            width: 100%;
+        }
+
+        .shortcutWrapper {
+            display: flex;
+            gap: 15px;
         }
     </style>
 </head>
 
 <body>
+    <h1>
+        Mobile
+    </h1>
     <a href="https://www.seongnam.go.kr/member/login.do?menuIdx=1000437" target="_blank">
         로그인
     </a>
@@ -100,11 +130,11 @@
             </select>
 
             <label for="faci">시설</label>
-            <select name="rent_faci_idx" id="faci">
-                <option value="6">풋살장</option> <!-- 화랑공원 -->
+            <select name="rent_faci_idx" id="rent_faci_idx">
+                <!-- <option value="6">풋살장</option> 화랑공원 -->
                 <option value="7" selected>다목적구장(축구장)</option> <!-- 마루공원 -->
-                <option value="8">풋살장A</option> <!-- 황새울공원 -->
-                <option value="9">풋살장B</option> <!-- 황새울공원 -->
+                <!-- <option value="8">풋살장A</option> 황새울공원 -->
+                <!-- <option value="9">풋살장B</option> 황새울공원 -->
             </select>
         </div>
 
@@ -118,7 +148,7 @@
             <label for="rent_time_gbn">시간</label>
             <select name="rent_time_gbn" id="rent_time_gbn">
                 <option value="06">06:00</option>
-                <option value="08">08:00</option>
+                <option value="08" selected>08:00</option>
                 <option value="10">10:00</option>
                 <option value="12">12:00</option>
                 <option value="14">14:00</option>
@@ -127,20 +157,109 @@
                 <option value="20">20:00</option>
             </select>
         </div>
-        <div>
+        <div class="wrapper customWrapper">
             <button type="submit">
                 예약
             </button>
         </div>
-        <div>
-            <button>
+        <div class="wrapper shortcutWrapper">
+            <button id="shortcut8">
                 8시 예약
             </button>
-            <button>
+            <button id="shortcut10">
                 10시 예약
             </button>
         </div>
     </form>
+    <script>
+        function format(y, m, d) {
+            return `${y}-${String(m + 1).padStart(2, 0)}-${String(d).padStart(2, 0)}`;
+        }
+        document.addEventListener("DOMContentLoaded", (e) => {
+            const facis = {
+                10: [{
+                    value: "6",
+                    text: "풋살장"
+                }],
+                12: [{
+                    value: "7",
+                    text: "다목적구장(축구장)"
+                }],
+                13: [{ value: "8", text: "풋살장A" }, { value: "9", text: "풋살장B" }]
+            };
+            const items = {
+                10: ["06", "08", "10", "12", "14", "16", "18", "20", "22"],
+                12: ["06", "08", "10", "12", "14", "16", "18", "20", "22"],
+                13: ["08", "10", "12", "14", "16", "18"]
+            }
+            const form = document.querySelector("form");
+            const rent_park_idx = document.getElementById("rent_park_idx");
+            const rent_faci_idx = document.getElementById("rent_faci_idx");
+            const rent_dt = document.getElementById("rent_dt");
+            const rent_time_gbn = document.getElementById("rent_time_gbn");
+            const shortcut8 = document.getElementById("shortcut8");
+            const shortcut10 = document.getElementById("shortcut10");
+
+            rent_park_idx.addEventListener("change", (e) => {
+                const park = e.target.value;
+
+                rent_faci_idx.innerHTML = "";
+                facis[park].forEach(({ value, text }) => {
+                    const option = document.createElement("option");
+                    option.value = value;
+                    option.textContent = text;
+
+                    rent_faci_idx.appendChild(option);
+                })
+
+                rent_time_gbn.innerHTML = "";
+                items[park].forEach((time) => {
+                    const option = document.createElement("option");
+                    option.value = time;
+                    option.textContent = time + ":00";
+
+                    rent_time_gbn.appendChild(option);
+
+                })
+            })
+            const date = new Date();
+            const min = new Date(date.getFullYear(), date.getMonth(), date.getDate() + 7);
+            const max = new Date(
+                date.getFullYear(),
+                date.getMonth(),
+                date.getDate() + 30
+            );
+
+            rent_dt.min = format(
+                min.getFullYear(),
+                min.getMonth(),
+                min.getDate()
+            );
+            rent_dt.max = format(
+                max.getFullYear(),
+                max.getMonth(),
+                max.getDate()
+            );
+            rent_dt.value = format(
+                max.getFullYear(),
+                max.getMonth(),
+                max.getDate()
+            );
+            shortcut8.addEventListener("click", (e) => {
+                rent_time_gbn.value = "08"
+            })
+            shortcut10.addEventListener("click", (e) => {
+                rent_time_gbn.value = "10"
+            })
+
+            rent_dt.addEventListener("click", function (evt) {
+                if (this.getAttribute("type") === "date") {
+                    this.showPicker();
+                }
+            });
+        })
+
+    </script>
 </body>
 
 </html>
