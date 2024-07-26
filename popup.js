@@ -112,6 +112,36 @@ document.addEventListener("DOMContentLoaded", (e) => {
   );
   document.querySelector("#day").textContent = getDay(max.getDay());
 
+  document.querySelector("button#plan").addEventListener("click", (e) => {
+    const selectDate = document.querySelector("#date");
+    const selectTime = document.querySelector("#time");
+
+    const dateText = Intl.DateTimeFormat("KR", {}).format(
+      selectDate.valueAsDate
+    );
+    const timeText = `${selectTime.value} ~ ${String(
+      parseInt(selectTime.value) + 2
+    ).padStart(2, "0")} 시`;
+
+    const text = `
+    날짜: ${dateText}
+    시간: ${timeText}
+
+    동호회 활동을 통한 선교 활동 및 개인 건강 증진을 위한 운동장 사용 신청
+    `;
+
+    let element = document.createElement("a");
+    element.setAttribute(
+      "href",
+      "data:text/plain;charset=utf-8," + encodeURIComponent(text)
+    );
+    element.setAttribute("download", "행사 계획서.txt");
+    element.style.display = "none"; //하이퍼링크 요소가 보이지 않도록 처리
+    document.body.appendChild(element); //DOM body요소에 하이퍼링크 부착
+    element.click(); //클릭 이벤트 트리거 - 이 시점에 다운로드 발생
+    document.body.removeChild(element); //하이퍼링크 제거
+  });
+
   document.querySelector("a").addEventListener("click", (e) => {
     e.preventDefault();
     chrome.tabs.update({
